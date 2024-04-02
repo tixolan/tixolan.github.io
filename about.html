@@ -5,26 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tixo's Lab</title>
     <link rel="stylesheet" href="style.css"/>
-    <script src="script.js"></script>
 </head>
 <body>
-    <div class="header">
-        <div class="header-icon">
-            <a href="index.html">
-                <svg style="filter: drop-shadow(0px 0px 7px rgb(255 255 255 / 0.5)); height: 70px" id="tixo-logo" class="unselectable">
-                    <text x="0" y="53" fill="white"
-                        style="font-family: 'Anonymous Pro', monospace;font-weight: 700;font-style: normal; font-size: 50">
-                        TIXO
-                    </text>
-                </svg>
-            </a>
-        </div>
-        <div class="buttons-container">
-            <a href="projects.html" class="header-button unselectable">Projects</a>
-            <a href="about.html" class="header-button unselectable">About</a>
+    <div class="menu container">
+        <h2 class="container-title">Menu</h2>
+        <ul class="menu-tree">
+            <li class="menu-item">
+                <input class="menu-input" type="checkbox" id="home" checked>
+                <label class="menu-input-label" for="home">
+                    <svg width="10" height="10">
+                        <polygon points="0,0 0,10 10,5" class="triangle"/>
+                    </svg>
+                    <span class="menu-label-text">Home</span>
+                    <a href="index.html"><img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);"/></a>
+                </label>
+                <ul class="menu-tree-sub">
+                    <li class="menu-item">
+                        <input class="menu-input" type="checkbox" id="projects">
+                        <label class="menu-input-label" for="projects">
+                            <svg width="10" height="10">
+                                <polygon points="0,0 0,10 10,5" class="triangle"/>
+                            </svg>
+                            <span class="menu-label-text">Projects</span>
+                            <a href="projects.html"><img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);"/></a>
+                        </label>
+                        <ul class="menu-tree-sub">
+                            <li class="menu-item-leaf">
+                                <a class="menu-link" href="projects/quickgacha-py.html"><img src="imgs/link-svgrepo-com.svg" height="10"/> Quickgacha.py</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <input class="menu-input" type="checkbox" id="about">
+                        <label class="menu-input-label" for="about">
+                            <svg width="10" height="10">
+                                <polygon points="0,0 0,10 10,5" class="triangle selected"/>
+                            </svg>
+                            <span class="menu-label-text">About</span>
+                            <a href="about.html"><img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);"/></a>
+                        </label>
+                        <ul class="menu-tree-sub">
+                            <li class="menu-item-leaf">
+                                <a class="menu-link" href="#"><img src="imgs/link-svgrepo-com.svg" height="10"/> WIP</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </div>
     </div>
-    <div class="content-container">
+    <div class="content container">
+        <h2 class="container-title">About</h2>
         
     </div>
 </body>
