@@ -60,11 +60,45 @@
         </div>
     </div>
     <div class="content container">
-        <h2 class="container-title unselectable">Home</h2>
-<div style="margin:30vh auto auto auto; max-width: fit-content;">
-    <p style="padding-right: 100px; font-size: 60px">Welcome to</p>
-    <p style="padding-left: 100px; font-size: 60px">Tixo's Lab</p>
+        <h2 class="container-title unselectable">Quickgacha.py</h2>
+<a href="https://github.com/tixolan/Quickgacha.py"><h1 id="quickgacha-py">QuickGacha.py</h1></a>
+<p>I was bored in a discord call while some people played Genshin Impact and I felt like pulling
+some gacha. Decided I could code a simple enough gacha myself and ended up with this.</p>
+<p>It's amazing how entertained I got.</p>
+<h2 id="how-to-use">How to use</h2>
+<p>Simply run</p>
+<div class="code-block">
+    <pre><code>py Quickgacha.py &lt;amount&gt;</code></pre>
 </div>
+<p>The <code>amount</code> is any integer above 0 (if you put 0 or negative numbers it simply won't do anything).
+There are also some options which can be checked with the <code>--help</code> option.</p>
+<div class="code-block">
+    <pre><code>$ <span class="hljs-keyword">py</span> QuickGacha.<span class="hljs-keyword">py</span> --<span class="hljs-keyword">help</span>
+usage: QuickGacha.<span class="hljs-keyword">py</span> [-h] [-s] [-i] amount
+
+positional <span class="hljs-keyword">argument</span><span class="hljs-variable">s:</span>
+amount         The amount of pulls you wish <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span>
+
+option<span class="hljs-variable">s:</span>
+-h, --<span class="hljs-keyword">help</span>     show this <span class="hljs-keyword">help</span> message <span class="hljs-built_in">and</span> <span class="hljs-keyword">exit</span>
+-s, --summary  Toggle <span class="hljs-keyword">to</span> show whether you want the summary <span class="hljs-built_in">or</span> not
+-i, --instant  Don<span class="hljs-string">'t show each pull and just jump to the end</span></code></pre>
+</div>
+<h2 id="rarities">Rarities</h2>
+<p>To customize the rarities simply edit the <code>rarity.json</code>. This file&#39;s structure is as follows:</p>
+<div class="code-block">
+<pre><code class="lang-json">{
+<span class="hljs-attr">"Rarity Name"</span>: {
+<span class="hljs-attr">"weight"</span>: <span class="hljs-number">1.0</span>,
+<span class="hljs-attr">"color"</span>: <span class="hljs-number">30</span>
+}
+}
+</code></pre>
+</div>
+<p>The <code>weight</code> can be any positive decimal value, it determines the likelihood of pulling this rarity. The <code>color</code> is
+a number which represents the <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors">ANSI Escape Code</a>.</p>
+<h2 id="notes">Notes</h2>
+<p>Because the script only pulls 2000 rarities at a time, you can put whatever number of pulls you desire. While this will make the script take longer to execute it shouldn&#39;t affect the amount of memory it consumes.</p>
 
     </div>
 </body>

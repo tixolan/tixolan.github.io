@@ -61,10 +61,7 @@ body {
 
 .menu-item {
     margin-top: 10px;
-}
-
-.menu-item-leaf {
-    margin-left: 10px;
+    font-size: 20px;
 }
 
 .menu-input {
@@ -76,7 +73,6 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 20px;
 }
 
 .menu-tree-sub {
@@ -125,16 +121,14 @@ body {
     user-select: none;
 }
 
-/* Projects */
-
-.project {
+article {
     border: 2px solid var(--border-color);
     margin: 20px;
     padding: 10px;
     color: var(--text-color);
 }
 
-.project-title {
+.article-title {
     font-size: 30px;
     margin: 0;
     color: var(--text-color);
