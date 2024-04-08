@@ -138,3 +138,32 @@ article {
     padding: 10px;
     border: 1px solid var(--border-color);
 }
+
+/* Gacha */
+.gacha-container {
+    margin:30vh auto auto auto;
+    max-width: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#gacha-result {
+    font-size: 80px;
+    margin-bottom: 100px;
+}
+
+#gacha-button {
+    font-size: 50px;
+    width: fit-content;
+    background-color: transparent;
+    margin: auto;
+    border: 1px solid var(--border-color);
+    transition: all 200ms ease-in-out;
+}
+
+#gacha-button:hover {
+    background-color: var(--text-color);
+    color: white;
+}
