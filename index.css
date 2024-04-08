@@ -1,0 +1,19 @@
+/* Welcome Page */
+
+.welcome-text {
+    font-size: 60px
+}
+
+.welcome-text.top {
+    padding-right: 100px;
+}
+
+.welcome-text.bottom {
+    padding-left: 100px;
+}
+
+@media screen and (max-width: 950px) {
+    .welcome-text {
+        font-size: 40px;
+    }
+}

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tixo's Lab</title>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="mobile.css"/>
 </head>
 <body>
     <input type="checkbox" id="menu-button"/>
@@ -69,90 +68,17 @@
         </div>
     </div>
     <div class="content container">
-        <h2 class="container-title unselectable">Gacha</h2>
+        <link rel="stylesheet" href="gacha.css"/>
+<h2 class="container-title unselectable">Gacha</h2>
+<div>
+    <input id="auto-pull-toggle" type="checkbox"/>
+    <label for="auto-pull-toggle">Auto Pull</label>
+</div>
 <div class="gacha-container">
     <span id="gacha-result">Press Pull!</span>
     <button id="gacha-button">Pull!</button>
-    <script>
-        let interval = null;
-        let element = document.getElementById("gacha-result");
-        let button = document.getElementById("gacha-button");
-
-        const rarities = {
-            Mythic: {
-                weight: 0.01,
-                color: "#B4009E"
-            },
-            Legendary: {
-                weight: 0.1,
-                color: "#C19C00"
-            },
-            Epic: {
-                weight: 1,
-                color: "#881798"
-            },
-            Rare: {
-                weight: 10,
-                color: "#3A96DD"
-            },
-            Uncommon: {
-                weight: 40,
-                color: "#13A10E"
-            },
-            Common: {
-                weight: 70,
-                color: "#767676"
-            }
-        }
-
-        function generateTable(spec) {
-            var i, j, table=[];
-            for (i in spec) {
-                for (j=0; j < spec[i]["weight"]*100; j++) {
-                    table.push(i);
-                }
-            }
-
-            return function() {
-                return table[Math.floor(Math.random() * table.length)];
-            }
-        }
-
-        var pull = generateTable(rarities)
-
-        function createRandomString(length) {
-            const chars = ' #$%&?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-                let result = "";
-                for (let i = 0; i < length; i++) {
-                    result += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-            return result;
-        }
-
-        function animation() {
-            let iteration = 0;
-            element.style.color = "black";
-            
-            clearInterval(interval);
-            
-            interval = setInterval(() => {
-                element.innerText = createRandomString(Math.floor(Math.random() * 10 + 5))
-                
-                iteration += 1;
-
-                if(iteration == 20) {
-                    clearInterval(interval);
-                    let result = pull();
-                    element.innerText = result;
-                    element.style.color = rarities[result]["color"];
-                    setTimeout(() => {
-                        button.removeAttribute("disabled");
-                    }, 500);
-                }
-            }, 30);
-        }
-        button.addEventListener("click", (event) => { event.target.setAttribute("disabled", "true"); animation(); });
-    </script>
+    
+    <script src="gacha.js"></script>
 </div>
     </div>
 </body>

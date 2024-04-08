@@ -167,45 +167,33 @@ article {
     border: 1px solid var(--border-color);
 }
 
-/* Gacha */
-.gacha-container {
-    margin:30vh auto auto auto;
-    max-width: fit-content;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+@media screen and (max-width: 950px) {
 
-#gacha-result {
-    font-size: 80px;
-    margin-bottom: 100px;
-}
+    .menu {
+        display: none;
+        height: fit-content;
+        grid-row-start: start-row;
+        grid-row-end: center1;
+        grid-column-end: end-column;
+    }
 
-#gacha-button {
-    font-size: 50px;
-    width: fit-content;
-    background-color: transparent;
-    margin: auto;
-    border: 1px solid var(--border-color);
-    transition: all 200ms ease-in-out;
-}
+    .menu-button-label {
+        display: block;
+    }
 
-#gacha-button:hover {
-    background-color: var(--text-color);
-    color: white;
-}
+    .content {
+        grid-column-start: start-column;
+    }
 
-/* Welcome Page */
+    #menu-button:checked ~ .content {
+        grid-row-start: center2;
+    }
 
-.welcome-text {
-    font-size: 60px
-}
+    #menu-button:checked ~ .menu {
+        display: block;
+    }
 
-.welcome-text.top {
-    padding-right: 100px;
-}
-
-.welcome-text.bottom {
-    padding-left: 100px;
+    #menu-button:checked ~ label .menu-burger {
+        content: url("imgs/close-svgrepo-com.svg");
+    }
 }
