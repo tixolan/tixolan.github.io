@@ -66,23 +66,91 @@
         </div>
     </div>
     <div class="content container">
-        <h2 class="container-title unselectable">About Me</h2>
-<div style="padding-left: 20px">
-    <h2>Who am I?</h2>
-    <p>Hi, I'm Tixo Lantool. I'm currently a student studying Computer Engineering who does occasional
-        projects on the side. I play videogames from time to time and enjoy turkish coffee.</p>
-    <p>Besides random projects and videogames I read books too, I'm currently reading <i>The Midnight Library</i> by Matt Haig.</p>
-    <h2>Current Projects</h2>
-    <p>In the <a href="projects.html">projects tab</a> you can find a list of my current projects. As you can see, only Quickgacha.py
-        is currently in there.</p>
-    <p>You <i>could</i> count this website as a project, since it was done using <a href="https://jinja.palletsprojects.com/en/3.1.x/">jinja2</a> and
-        Python.</p>
-    <h2>Future Projects</h2>
-    <p>These projects are ones I've given plenty of thought. They have turned into plans.</p>
-    <h3>Wizardry</h3>
-    <p>A program which generates fantasy magic circles based on norse runes. This project will power my Discord bot of the same name.</p>
-</div>
+        <h2 class="container-title unselectable">Gacha</h2>
+<div class="gacha-container">
+    <span id="gacha-result">Press Pull!</span>
+    <button id="gacha-button">Pull!</button>
+    <script>
+        let interval = null;
+        let element = document.getElementById("gacha-result");
+        let button = document.getElementById("gacha-button");
 
+        const rarities = {
+            Mythic: {
+                weight: 0.01,
+                color: "#B4009E"
+            },
+            Legendary: {
+                weight: 0.1,
+                color: "#C19C00"
+            },
+            Epic: {
+                weight: 1,
+                color: "#881798"
+            },
+            Rare: {
+                weight: 10,
+                color: "#3A96DD"
+            },
+            Uncommon: {
+                weight: 40,
+                color: "#13A10E"
+            },
+            Common: {
+                weight: 70,
+                color: "#767676"
+            }
+        }
+
+        function generateTable(spec) {
+            var i, j, table=[];
+            for (i in spec) {
+                for (j=0; j < spec[i]["weight"]*100; j++) {
+                    table.push(i);
+                }
+            }
+
+            return function() {
+                return table[Math.floor(Math.random() * table.length)];
+            }
+        }
+
+        var pull = generateTable(rarities)
+
+        function createRandomString(length) {
+            const chars = ' #$%&?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                let result = "";
+                for (let i = 0; i < length; i++) {
+                    result += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+            return result;
+        }
+
+        function animation() {
+            let iteration = 0;
+            element.style.color = "black";
+            
+            clearInterval(interval);
+            
+            interval = setInterval(() => {
+                element.innerText = createRandomString(Math.floor(Math.random() * 10 + 5))
+                
+                iteration += 1;
+
+                if(iteration == 20) {
+                    clearInterval(interval);
+                    let result = pull();
+                    element.innerText = result;
+                    element.style.color = rarities[result]["color"];
+                    setTimeout(() => {
+                        button.removeAttribute("disabled");
+                    }, 500);
+                }
+            }, 30);
+        }
+        button.addEventListener("click", (event) => { event.target.setAttribute("disabled", "true"); animation(); });
+    </script>
+</div>
     </div>
 </body>
 </html>
