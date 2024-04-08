@@ -6,6 +6,10 @@ let button = document.getElementById("gacha-button");
 let toggle = document.getElementById("auto-pull-toggle");
 
 const rarities = {
+    Transcendental: {
+        weight: 0.0005,
+        color: "#00C3FF"
+    },
     Mythic: {
         weight: 0.01,
         color: "#B4009E"
@@ -32,20 +36,28 @@ const rarities = {
     }
 }
 
-function generateTable(spec) {
-    var i, j, table=[];
-    for (i in spec) {
-        for (j=0; j < spec[i]["weight"]*100; j++) {
-            table.push(i);
-        }
-    }
+function generateRanges(spec) {
+    var obj = {};
+    var i = 0;
+    Object.keys(rarities).forEach((k) => {
+        let value = rarities[k]["weight"] * 10000;
+        obj[k] = [i, value];
+        i += value;
+    });
+    i+=1;
 
     return function() {
-        return table[Math.floor(Math.random() * table.length)];
+        let value = Math.floor(Math.random() * i);
+        for(r in obj) {
+            if(value >= obj[r][0] && value < obj[r][1]) {
+                return r;
+            }
+        }
+        return "Common";
     }
 }
 
-var pull = generateTable(rarities)
+var pull = generateRanges(rarities)
 
 function createRandomString(length) {
     const chars = ' #$%&?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -85,6 +97,7 @@ button.addEventListener("click", (event) => { event.target.setAttribute("disable
 toggle.addEventListener("click", (event) => {
     if(event.target.checked) {
         button.setAttribute("disabled", "");
+        animation();
         auto_interval = setInterval(() => {
             animation();
         }, 1000);
