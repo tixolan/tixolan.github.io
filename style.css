@@ -133,8 +133,6 @@ body {
 }
 
 .content {
-    z-index: -1;
-    position: relative;
     transition: all 100ms ease-in-out;
     grid-row-start: start-row;
     grid-row-end: end-row;
