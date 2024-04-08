@@ -1,0 +1,38 @@
+@media screen and (max-width: 950px) {
+
+    .menu {
+        display: none;
+        height: fit-content;
+        grid-row-start: start-row;
+        grid-row-end: center1;
+        grid-column-end: end-column;
+    }
+
+    .menu-button-label {
+        display: block;
+    }
+
+    .content {
+        grid-column-start: start-column;
+    }
+
+    #menu-button:checked ~ .content {
+        grid-row-start: center2;
+    }
+
+    #menu-button:checked ~ .menu {
+        display: block;
+    }
+
+    #menu-button:checked ~ label .menu-burger {
+        content: url("imgs/close-svgrepo-com.svg");
+    }
+
+    #gacha-result {
+        font-size: 45px;
+    }
+
+    .welcome-text {
+        font-size: 40px;
+    }
+}
