@@ -38,6 +38,12 @@
     font-size: 40px;
 }
 
+.version {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 @media screen and (max-width: 950px) {
     #gacha-result {
         font-size: 40px;
