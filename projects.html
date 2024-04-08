@@ -4,37 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tixo's Lab</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
     <input type="checkbox" id="menu-button"/>
-    <label for="menu-button" class="menu-button-label unselectable"><img src="imgs/burger-menu-svgrepo-com.svg" height="20px" class="menu-burger"/></label>
+    <label for="menu-button" class="menu-button-label unselectable">
+    <svg width="30px" height="30px" class="icon" id="burger">
+<line stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    x1="5" y1="10"
+    x2="24" y2="10"></line>
+<line stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    x1="5" y1="15"
+    x2="24" y2="15"></line>
+<line stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+    x1="5" y1="20"
+    x2="24" y2="20"></line>
+</svg>
+    <svg width="30px" height="30px" class="icon" id="cross">
+<line stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        x1="5" y1="5"
+        x2="24" y2="24"></line>
+<line stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        x1="24" y1="5"
+        x2="5" y2="24"></line>
+</svg>
+    </label>
     <div class="menu container">
         <h2 class="container-title unselectable">Menu</h2>
         <ul class="menu-tree">
             <li class="menu-item">
                 <input class="menu-input" type="checkbox" id="home" checked>
                 <label class="menu-input-label" for="home">
-                    <svg width="10" height="10">
-                        <polygon points="0,0 0,10 10,5" class="triangle"/>
-                    </svg>
+                    <svg width="10" height="10" class="icon">
+    <polygon points="0,0 0,10 10,5" class="triangle" fill="currentColor"/>
+</svg>
                     <span class="menu-label-text unselectable">Home</span>
-                    <a href="index.html" class="unselectable"><img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);"/></a>
+                    <a href="index.html" class="unselectable"><img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);" class="icon"/></a>
                 </label>
                 <ul class="menu-tree-sub">
                     <li class="menu-item">
                         <input class="menu-input" type="checkbox" id="projects">
                         <label class="menu-input-label" for="projects">
-                            <svg width="10" height="10">
-                                <polygon points="0,0 0,10 10,5" class="triangle"/>
-                            </svg>
+                            <svg width="10" height="10" class="icon">
+    <polygon points="0,0 0,10 10,5" class="triangle" fill="currentColor"/>
+</svg>
                             <span class="menu-label-text unselectable">Projects</span>
-                            <a href="projects.html" class="unselectable"><img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);"/></a>
+                            <a href="projects.html" class="unselectable"><img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);" class="icon"/></a>
                         </label>
                         <ul class="menu-tree-sub">
                             <li class="menu-item">
                                 <a class="menu-link unselectable" href="quickgacha-py.html">
-                                <img src="imgs/blank-file-svgrepo-com.svg" height="13" width="13" style="padding-right: 5px;"/>Quickgacha.py
+                                <svg height="13px" width="16px" class="icon">
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="0.5"
+        x2="0.5" y2="12.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="12.5"
+        x2="8.5" y2="12.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="0.5"
+        x2="6.5" y2="0.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="12.5"
+        x2="8.5" y2="3.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="3.5"
+        x2="6.5" y2="0.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="3.5"
+        x2="6.5" y2="3.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="6.5" y1="0.5"
+        x2="6.5" y2="3.5"></line>
+</svg>Quickgacha.py
                                 </a>
                             </li>
                         </ul>
@@ -42,30 +84,104 @@
                     <li class="menu-item">
                         <input class="menu-input" type="checkbox" id="extras">
                         <label class="menu-input-label" for="extras">
-                        <svg width="10" height="10">
-                            <polygon points="0,0 0,10 10,5" class="triangle"/>
-                        </svg>
+                        <svg width="10" height="10" class="icon">
+    <polygon points="0,0 0,10 10,5" class="triangle" fill="currentColor"/>
+</svg>
                         <span class="menu-label-text unselectable">Extras</span>
                         <a href="extras.html" class="unselectable">
-                        <img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);"/>
+                        <img width="20" height="10" src="imgs/arrow-up-from-bracket-svgrepo-com.svg" style="transform: rotate(90deg);" class="icon"/>
                         </a>
                         </label>
                         <ul class="menu-tree-sub">
                             <li class="menu-item">
                                 <a class="menu-link unselectable" href="gacha.html">
-                                <img src="imgs/blank-file-svgrepo-com.svg" height="13" width="13" style="padding-right: 5px;"/>Gacha
+                                <svg height="13px" width="16px" class="icon">
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="0.5"
+        x2="0.5" y2="12.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="12.5"
+        x2="8.5" y2="12.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="0.5"
+        x2="6.5" y2="0.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="12.5"
+        x2="8.5" y2="3.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="3.5"
+        x2="6.5" y2="0.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="3.5"
+        x2="6.5" y2="3.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="6.5" y1="0.5"
+        x2="6.5" y2="3.5"></line>
+</svg>Gacha
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="menu-item">
                         <a class="menu-link unselectable" href="about-me.html">
-                        <img src="imgs/blank-file-svgrepo-com.svg" height="13" width="13" style="padding-right: 5px;"/>About Me
+                        <svg height="13px" width="16px" class="icon">
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="0.5"
+        x2="0.5" y2="12.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="12.5"
+        x2="8.5" y2="12.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="0.5" y1="0.5"
+        x2="6.5" y2="0.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="12.5"
+        x2="8.5" y2="3.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="3.5"
+        x2="6.5" y2="0.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="8.5" y1="3.5"
+        x2="6.5" y2="3.5"></line>
+<line stroke="currentColor" stroke-width="1" stroke-linecap="round"
+        x1="6.5" y1="0.5"
+        x2="6.5" y2="3.5"></line>
+</svg>About Me
                         </a>
                     </li>
                 </ul>
             </li>
-        </div>
+        </ul>
+        <input type="checkbox" id="dark-mode"/>
+        <label for="dark-mode">
+            <svg width="30" height="30" class="icon" id="lightIcon">
+    <circle cx="15" cy="15" r="6" fill="currentColor"/>
+    <line
+        id="ray"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        x1="15"
+        y1="1"
+        x2="15"
+        y2="4"
+    ></line>
+
+    <use href="#ray" transform="rotate(45 15 15)" />
+    <use href="#ray" transform="rotate(90 15 15)" />
+    <use href="#ray" transform="rotate(135 15 15)" />
+    <use href="#ray" transform="rotate(180 15 15)" />
+    <use href="#ray" transform="rotate(225 15 15)" />
+    <use href="#ray" transform="rotate(270 15 15)" />
+    <use href="#ray" transform="rotate(315 15 15)" />
+</svg>
+            <svg width="30" height="30" class="icon" id="darkIcon">
+    <path
+        fill="currentColor"
+        d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5"
+    />
+</svg>
+        </label>
     </div>
     <div class="content container">
         <h2 class="container-title">Projects</h2>
@@ -76,4 +192,5 @@
 
     </div>
 </body>
+<script src="script.js"></script>
 </html>

@@ -3,7 +3,7 @@ let auto_interval = null;
 
 let element = document.getElementById("gacha-result");
 let button = document.getElementById("gacha-button");
-let toggle = document.getElementById("auto-pull-toggle");
+let auto_toggle = document.getElementById("auto-pull-toggle");
 
 const rarities = {
     Transcendental: {
@@ -70,7 +70,7 @@ function createRandomString(length) {
 
 function animation() {
     let iteration = 0;
-    element.style.color = "black";
+    element.style.color = getComputedStyle(element).getPropertyValue("--text-color");
     
     clearInterval(animation_interval);
     
@@ -85,7 +85,7 @@ function animation() {
             element.innerText = result;
             element.style.color = rarities[result]["color"];
             setTimeout(() => {
-                if(!toggle.checked) {
+                if(!auto_toggle.checked) {
                     button.removeAttribute("disabled");
                 }
             }, 500);
@@ -94,7 +94,7 @@ function animation() {
 }
 
 button.addEventListener("click", (event) => { event.target.setAttribute("disabled", "true"); animation(); });
-toggle.addEventListener("click", (event) => {
+auto_toggle.addEventListener("click", (event) => {
     if(event.target.checked) {
         button.setAttribute("disabled", "");
         animation();
