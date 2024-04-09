@@ -256,17 +256,28 @@
     <div class="content container">
         <link rel="stylesheet" href="css/gacha.css"/>
 <h2 class="container-title unselectable">Gacha</h2>
-<div>
-    <input id="auto-pull-toggle" type="checkbox"/>
-    <label for="auto-pull-toggle">Auto Pull</label>
-</div>
-<div class="gacha-container">
-    <span id="gacha-result">Press Pull!</span>
-    <button id="gacha-button">Pull!</button>
-    
+<span class="version">v0.2.0</span>
+<div class="gacha-box">
+    <div>
+        <input id="auto-pull-toggle" type="checkbox"/>
+        <label for="auto-pull-toggle">Auto Pull</label>
+    </div>
+    <div class="gacha-container">
+        <span id="gacha-result">Press Pull!</span>
+        <button id="gacha-button">Pull!</button>
+        
+    </div>
+    <input id="history-toggle" type="checkbox"/>
+    <label for="history-toggle" class="history-label-toggled">Hide History</label>
+    <label for="history-toggle" class="history-label-untoggled">Show History</label>
+    <div class="history-container container">
+        <h2 class="container-title unselectable">Last 100 Pulls</h2>
+        <div id="pull-history">
+        </div>
+    </div>
     <script src="gacha.js"></script>
 </div>
-<span class="version">v0.1.4</span>
+
     </div>
 </body>
 <script src="script.js"></script>

@@ -1,6 +1,19 @@
 /* Gacha */
+.gacha-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
 .gacha-container {
-    margin:25vh auto auto auto;
+    margin: auto;
     max-width: fit-content;
     text-align: center;
     display: flex;
@@ -11,7 +24,7 @@
 #gacha-result {
     color: var(--text-color);
     font-size: 80px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 #gacha-button {
@@ -23,7 +36,6 @@
     margin: auto;
     border: 1px solid var(--border-color);
     transition: all 200ms ease-in-out;
-    margin-bottom: 100px;
 }
 
 #gacha-button:hover {
@@ -40,10 +52,53 @@
     font-size: 40px;
 }
 
-.version {
+.history-container {
+    margin-top: 20px;
+    max-height: 200px;
+    display: none;
+}
+
+#pull-history {
+    position: relative;
+    top: -20px;
+    max-height: 190px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#history-toggle{
     position: absolute;
-    bottom: 10px;
-    right: 12px;
+    opacity: 0;
+}
+
+.history-label-untoggled {
+    display: block;
+}
+
+.history-label-toggled {
+    display: none;
+}
+
+#history-toggle:checked ~ div.history-container {
+    display: block;
+}
+
+#history-toggle:checked ~ .history-label-toggled {
+    display: block;
+}
+
+#history-toggle:checked ~ .history-label-untoggled {
+    display: none;
+}
+
+.version {
+    position: relative;
+    top: -32px;
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: right;
 }
 
 @media screen and (max-width: 950px) {

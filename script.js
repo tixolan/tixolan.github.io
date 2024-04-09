@@ -1,5 +1,12 @@
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-let darkMode = darkModeMediaQuery.matches;
+let darkMode = localStorage.getItem("darkMode");
+
+if(darkMode == null) {
+    darkMode = darkModeMediaQuery.matches;
+} else {
+    darkMode = darkMode === "true";
+}
+
 let darkIcon = document.getElementById("darkIcon");
 let lightIcon = document.getElementById("lightIcon");
 
@@ -17,6 +24,7 @@ function updateDarkMode() {
         document.documentElement.style.setProperty("--text-color", "#fff");
         darkIcon.style.display = "none";
         lightIcon.style.display = "inline";
+        localStorage.setItem("darkMode", "true");
     } else {
         document.documentElement.style.setProperty("--bg-color", "#e9e6e2");
         document.documentElement.style.setProperty("--window-bg-color", "#f9f6f2");
@@ -24,6 +32,7 @@ function updateDarkMode() {
         document.documentElement.style.setProperty("--text-color", "#000");
         lightIcon.style.display = "none";
         darkIcon.style.display = "inline";
+        localStorage.setItem("darkMode", "false");
     }
 }
 

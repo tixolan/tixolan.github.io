@@ -5,6 +5,8 @@ let element = document.getElementById("gacha-result");
 let button = document.getElementById("gacha-button");
 let auto_toggle = document.getElementById("auto-pull-toggle");
 
+
+
 const rarities = {
     Transcendental: {
         weight: 0.0005,
@@ -34,6 +36,26 @@ const rarities = {
         weight: 70,
         color: "#767676"
     }
+}
+
+let pull_history = document.getElementById("pull-history");
+let gacha_history = localStorage.getItem("gacha-history");
+
+if(gacha_history == null) {
+    gacha_history = [];
+} else {
+    gacha_history = gacha_history.split(",")
+}
+
+function addPullToHistory(item) {
+    const para = document.createElement("span");
+    para.appendChild(document.createTextNode(item));
+    para.style.color = rarities[item]["color"];
+    pull_history.prepend(para);
+}
+
+for(i in gacha_history) {
+    addPullToHistory(gacha_history[i]);
 }
 
 function generateRanges(spec) {
@@ -82,6 +104,12 @@ function animation() {
         if(iteration == 20) {
             clearInterval(animation_interval);
             let result = pull();
+            gacha_history.push(result);
+            if(gacha_history.length > 100) {
+                gacha_history.shift();
+            }
+            localStorage.setItem("gacha-history", gacha_history.toString());
+            addPullToHistory(result);
             element.innerText = result;
             element.style.color = rarities[result]["color"];
             setTimeout(() => {
@@ -94,6 +122,7 @@ function animation() {
 }
 
 button.addEventListener("click", (event) => { event.target.setAttribute("disabled", "true"); animation(); });
+
 auto_toggle.addEventListener("click", (event) => {
     if(event.target.checked) {
         button.setAttribute("disabled", "");

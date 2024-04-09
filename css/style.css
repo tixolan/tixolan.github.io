@@ -22,8 +22,8 @@ body {
     padding: 20px 10px 10px 10px;
     color: var(--text-color);
     display: grid;
-    grid-template-columns: [start-column] 20% [center1] 10px [center2] auto [end-column];
-    grid-template-rows: [start-row] auto [center1] 20px [center2] 1fr [end-row];
+    grid-template-columns: [start-column] min-content [center1] 10px [center2] auto [end-column];
+    grid-template-rows: [start-row] min-content [center1] 20px [center2] auto [end-row];
 }
 
 .container {
@@ -50,7 +50,6 @@ body {
 .menu {
     grid-column-start: start-column;
     grid-column-end: center1;
-    min-width:fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -126,6 +125,7 @@ body {
 }
 
 .menu-link {
+    white-space: nowrap;
     text-decoration: none;
     color: var(--text-color);
 }
