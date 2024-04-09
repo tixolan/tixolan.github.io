@@ -107,6 +107,7 @@ function animation() {
             gacha_history.push(result);
             if(gacha_history.length > 100) {
                 gacha_history.shift();
+                pull_history.removeChild(pull_history.lastElementChild);
             }
             localStorage.setItem("gacha-history", gacha_history.toString());
             addPullToHistory(result);

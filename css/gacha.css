@@ -53,9 +53,11 @@
 }
 
 .history-container {
-    margin-top: 20px;
-    max-height: 200px;
-    display: none;
+    margin-top: 0;
+    max-height: 0;
+    transition: max-height 100ms ease-in-out;
+    overflow: hidden;
+    opacity: 0;
 }
 
 #pull-history {
@@ -80,8 +82,11 @@
     display: none;
 }
 
-#history-toggle:checked ~ div.history-container {
-    display: block;
+#history-toggle:checked ~ .history-container {
+    margin-top: 20px;
+    max-height: 200px;
+    opacity: 100%;
+    overflow: visible;
 }
 
 #history-toggle:checked ~ .history-label-toggled {
