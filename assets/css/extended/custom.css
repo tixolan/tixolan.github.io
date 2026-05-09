@@ -1,3 +1,7 @@
+.main {
+    background: transparent !important;
+}
+
 :root[data-theme="dark"] {
     --theme: #0a0a0a;
 }
