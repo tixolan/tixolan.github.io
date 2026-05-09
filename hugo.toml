@@ -9,6 +9,10 @@ theme = 'PaperMod'
     # Placeholder for your profile image
     profileMode = { enabled = true, title = "Tixo Lantool", imageUrl = "/images/light_cube.png" }
 
+[params.assets]
+favicon = "/favicon.ico"
+favicon16x16 = "/favicon-16x16.ico"
+
 [caches]
     [caches.images]
     dir = ':cacheDir/images'
