@@ -1,0 +1,36 @@
+baseURL = 'https://tixolan.github.io/'
+locale = 'en-us'
+title = 'Tixo Lantool'
+theme = 'PaperMod'
+
+[params]
+    name = "Tixo Lantool"
+    description = "Cloud Developer & Shader Enthusiast"
+    # Placeholder for your profile image
+    profileMode = { enabled = true, title = "Tixo Lantool", imageUrl = "/images/light_cube.png" }
+
+[caches]
+    [caches.images]
+    dir = ':cacheDir/images'
+
+[[params.socialIcons]]
+    name = "discord"
+    url = "https://discord.com/users/tixo"
+
+[[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/TixoLan"
+
+[[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/tixolan"
+
+[[menu.main]]
+    name = "Shaders"
+    url = "/shaders"
+    weight = 10
+
+[[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 10

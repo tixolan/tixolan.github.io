@@ -1,0 +1,58 @@
+:root[data-theme="dark"] {
+    --theme: #0a0a0a;
+}
+
+.shader-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.shader-card {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: var(--entry);
+    border-radius: 10px;
+    overflow: hidden;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    border: 1px solid var(--border);
+    text-decoration: none !important;
+    color: var(--primary) !important;
+}
+
+.shader-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.shader-thumbnail {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.shader-info {
+    padding: 1.2rem;
+}
+
+.shader-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.shader-info p {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.shader-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
