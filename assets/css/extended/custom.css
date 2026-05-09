@@ -1,3 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+/* Targeting the Profile Mode title */
+.profile_inner h1 {
+    font-family: "Space Mono", monospace; /* Use your chosen font name here */
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Top-left Website Title / Logo */
+.logo a {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-size: 24px;
+}
+
 .main {
     background: transparent !important;
 }
