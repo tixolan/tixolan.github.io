@@ -1,4 +1,4 @@
-baseURL = 'https://tixolan.github.io/'
+baseURL = 'https://tixo.pt'
 locale = 'en-us'
 title = 'Tixo Lantool'
 theme = 'PaperMod'
