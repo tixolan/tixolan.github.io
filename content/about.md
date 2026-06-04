@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 date: 2026-05-09
+tags: ["About Me"]
 ---
 
 ![Profile](/images/light_cube.png)

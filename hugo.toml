@@ -38,3 +38,8 @@ favicon16x16 = "/favicon-16x16.ico"
     name = "About"
     url = "/about"
     weight = 10
+
+[[menu.main]]
+    name = "Articles"
+    url = "/articles"
+    weight = 10

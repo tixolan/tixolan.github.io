@@ -1,0 +1,25 @@
+{{ define "main" }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+</header>
+
+<div class="article-grid">
+    {{ range .Pages.ByPublishDate.Reverse }}
+    <a href="{{ .Permalink }}" class="article-card">
+        <div
+            class="article-thumbnail"
+            style="background-image: url('{{ .Params.thumbnail | absURL }}');"
+        ></div>
+        <div class="article-info">
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description | truncate 80 }}</p>
+            <div class="article-tags">
+                {{ range .Params.tags }}
+                <span>#{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+    </a>
+    {{ end }}
+</div>
+{{ end }}

@@ -24,14 +24,16 @@
     --theme: #0a0a0a;
 }
 
-.shader-grid {
+.shader-grid,
+.article-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
 }
 
-.shader-card {
+.shader-card,
+.article-card {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     background: var(--entry);
     border-radius: 10px;
@@ -44,34 +46,40 @@
     color: var(--primary) !important;
 }
 
-.shader-card:hover {
+.shader-card:hover,
+.article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.shader-thumbnail {
+.shader-thumbnail,
+.article-thumbnail {
     height: 180px;
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid var(--border);
 }
 
-.shader-info {
+.shader-info,
+.article-info {
     padding: 1.2rem;
 }
 
-.shader-info h3 {
+.shader-info h3,
+.article-info h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1.25rem;
 }
 
-.shader-info p {
+.shader-info p,
+.article-info p {
     font-size: 0.9rem;
     color: var(--secondary);
     margin-bottom: 1rem;
 }
 
-.shader-tags {
+.shader-tags,
+.article-tags {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
