@@ -21,6 +21,6 @@ repeated in the X axis only to be rotated afterwards. This had to be done in thi
 I originally intended to have them just be made of light and emit it. However, I felt like something was missing and decided to try for a tron-ish
 aesthetic by replicating the chain and flattening the original link as well as expanding the major radius.
 
-|[Chain Light Blocks](/images/chains/chains_light_mm.png)
+![Chain Light Blocks](/images/chains/chains_light_mm.png)
 
 As with all my shaders, I owe it to [Paulo Falcão's MaterialMakerRayMarching](https://github.com/paulofalcao/MaterialMakerRayMarching) library.
